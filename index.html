@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nkiri Synergies Ltd – Empowering Innovation, Enhancing Productivity</title>
+<meta name="description" content="Nkiri Synergies connects skilled professionals with businesses across Africa through a seamless, user-friendly platform. Download Vast App today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="main.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav id="navbar">
+  <div class="nav-logo" onclick="navigate('home')">
+    <div class="nav-logo-mark">N</div>
+    <div class="nav-logo-text">Nkiri Synergies<span>Ltd</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#" onclick="navigate('home')" data-page="home">Home</a>
+    <a href="#" onclick="navigate('about')" data-page="about">About Us</a>
+    <a href="#" onclick="navigate('services')" data-page="services">Services</a>
+    <a href="#" onclick="navigate('how-it-works')" data-page="how-it-works">How It Works</a>
+    <a href="#" onclick="navigate('providers')" data-page="providers">For Providers</a>
+    <a href="#" onclick="navigate('faq')" data-page="faq">FAQ</a>
+    <a href="#" onclick="navigate('contact')" data-page="contact">Contact</a>
+    <a href="#" onclick="navigate('contact')" class="btn btn-primary btn-sm nav-cta">Get Started</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="navigate('home');closeMenu()">Home</a>
+  <a href="#" onclick="navigate('about');closeMenu()">About Us</a>
+  <a href="#" onclick="navigate('services');closeMenu()">Services</a>
+  <a href="#" onclick="navigate('how-it-works');closeMenu()">How It Works</a>
+  <a href="#" onclick="navigate('providers');closeMenu()">For Providers</a>
+  <a href="#" onclick="navigate('faq');closeMenu()">FAQ</a>
+  <a href="#" onclick="navigate('contact');closeMenu()">Contact</a>
+</div>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/2348000000000" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+
+<!-- ============================================================
+     PAGE: HOME
+============================================================ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">🌍 Pioneering the Future of Work in Africa</div>
+        <h1>Transforming the <em>Future of Work</em> in Africa</h1>
+        <p>Connecting skilled professionals with businesses and individuals through a seamless, user-friendly platform. Powered by the Vast App.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" onclick="navigate('services')">🔍 Find a Service Provider</button>
+          <button class="btn btn-outline btn-lg" onclick="navigate('providers')">Become a Provider →</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Service Providers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Satisfied Clients</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Service Categories</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="hero-main-card">
+            <div class="hero-card-header">
+              <span class="hero-card-title">Available Services</span>
+              <span class="hero-badge-pill">● Live</span>
+            </div>
+            <div class="service-item">
+              <div class="service-icon fi-blue">🧹</div>
+              <div class="service-item-text">
+                <div class="service-item-title">Cleaning Services</div>
+                <div class="service-item-sub">240 providers available</div>
+              </div>
+            </div>
+            <div class="service-item">
+              <div class="service-icon fi-teal">📦</div>
+              <div class="service-item-text">
+                <div class="service-item-title">Logistics & Delivery</div>
+                <div class="service-item-sub">180 providers available</div>
+              </div>
+            </div>
+            <div class="service-item">
+              <div class="service-icon fi-green">💻</div>
+              <div class="service-item-text">
+                <div class="service-item-title">App Development</div>
+                <div class="service-item-sub">95 providers available</div>
+              </div>
+            </div>
+            <div class="service-item">
+              <div class="service-icon fi-gold">🛒</div>
+              <div class="service-item-text">
+                <div class="service-item-title">E-commerce Solutions</div>
+                <div class="service-item-sub">120 providers available</div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card floating-card-1">
+            <div class="fc-label">This Month</div>
+            <div class="fc-value">₦4.2M</div>
+            <div class="fc-sub">↑ 32% vs last month</div>
+          </div>
+          <div class="floating-card floating-card-2">
+            <div class="fc-label">Avg. Rating</div>
+            <div class="fc-value">4.9 ⭐</div>
+            <div class="fc-sub">Based on 12,400+ reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="section features-section">
+    <div class="container">
+      <div class="features-intro">
+        <div class="section-label">What We Do</div>
+        <h2>A Complete Service <span class="text-gradient">Integration Platform</span></h2>
+        <p class="lead lead-center" style="margin-top:0.75rem">Nkiri Synergies bridges the gap between service providers and seekers, creating a thriving ecosystem for professionals and businesses across Africa.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card feature-card">
+          <div class="feature-icon fi-blue">🌐</div>
+          <h3>Service Provider Network</h3>
+          <p>Access a diverse network of verified, skilled professionals across Nigeria and beyond.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon fi-teal">💡</div>
+          <h3>Innovative Solutions</h3>
+          <p>Cutting-edge approaches to service delivery that keep you ahead of the curve.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon fi-green">📱</div>
+          <h3>User-Friendly Platform</h3>
+          <p>Intuitive interface for seamlessly finding, engaging, and managing service providers.</p>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon fi-gold">🔒</div>
+          <h3>Secure Transactions</h3>
+          <p>Integrated payment gateway with Paystack and Flutterwave for safe, reliable payments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="section services-section">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem">
+        <div>
+          <div class="section-label">Our Services</div>
+          <h2>Everything You <span class="text-gradient">Need, Delivered</span></h2>
+        </div>
+        <button class="btn btn-secondary" onclick="navigate('services')">View All Services →</button>
+      </div>
+      <div class="grid-3">
+        <div class="service-card">
+          <div class="service-card-icon">🎯</div>
+          <h3>Service Matching</h3>
+          <p>Smart algorithms connect you with the perfect provider for your specific needs.</p>
+          <button class="btn btn-primary btn-sm" onclick="navigate('contact')">Get Started</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">📊</div>
+          <h3>Project Management</h3>
+          <p>End-to-end tools to track, manage, and deliver projects efficiently.</p>
+          <button class="btn btn-primary btn-sm" onclick="navigate('contact')">Get Started</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">✅</div>
+          <h3>Quality Assurance</h3>
+          <p>Rigorous vetting and review systems ensure top-quality service delivery.</p>
+          <button class="btn btn-primary btn-sm" onclick="navigate('contact')">Get Started</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">🚚</div>
+          <h3>Logistics & Delivery</h3>
+          <p>Reliable logistics partners for fast, secure delivery across Nigeria.</p>
+          <button class="btn btn-primary btn-sm" onclick="navigate('contact')">Get Started</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">🧹</div>
+          <h3>Cleaning Services</h3>
+          <p>On-site and online cleaning solutions for homes and businesses.</p>
+          <button class="btn btn-primary btn-sm" onclick="navigate('contact')">Get Started</button>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">💻</div>
+          <h3>App Development</h3>
+          <p>Expert developers to build custom mobile and web applications.</p>
+          <button class="btn btn-primary btn-sm" onclick="navigate('contact')">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="section benefits-section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:3rem">
+        <div class="section-label">Why Choose Us</div>
+        <h2>Built for Africa's <span class="text-gradient">Modern Economy</span></h2>
+      </div>
+      <div class="grid-3">
+        <div class="benefit-card">
+          <div class="benefit-icon fi-blue">⚡</div>
+          <div>
+            <h4>Convenience</h4>
+            <p>Easy access to a wide range of professional services, all in one place, anytime you need them.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon fi-teal">🚀</div>
+          <div>
+            <h4>Efficiency</h4>
+            <p>Streamlined processes eliminate friction, saving you time and resources on every transaction.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon fi-green">🌱</div>
+          <div>
+            <h4>Innovation</h4>
+            <p>We encourage creative solutions and continuously evolve to meet the changing needs of our users.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon fi-gold">🛡️</div>
+          <div>
+            <h4>Trust & Safety</h4>
+            <p>Every provider is thoroughly vetted, background-checked, and insured for your peace of mind.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon" style="background:rgba(139,92,246,0.1)">📈</div>
+          <div>
+            <h4>Growth</h4>
+            <p>Access tools and a marketplace that helps your business scale and reach new customers.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon" style="background:rgba(236,72,153,0.1)">💳</div>
+          <div>
+            <h4>Secure Payments</h4>
+            <p>Integrated with Paystack and Flutterwave for safe, transparent, and instant payments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vast App -->
+  <section class="section vast-section">
+    <div class="container">
+      <div class="vast-grid">
+        <div class="vast-content">
+          <div class="section-label" style="color:#60a5fa;background:rgba(96,165,250,0.1)">Flagship Product</div>
+          <h2>Introducing <span style="color:#2dd4bf">Vast App</span></h2>
+          <p>Our flagship product is a comprehensive business management application designed to streamline workflows, enhance collaboration, and boost efficiency for businesses and individuals across Africa.</p>
+          <div class="vast-features">
+            <div class="vast-feat">Streamline workflows and automate repetitive tasks</div>
+            <div class="vast-feat">Real-time collaboration with your team</div>
+            <div class="vast-feat">Manage projects, track milestones, and meet deadlines</div>
+            <div class="vast-feat">Secure in-app payments via Paystack & Flutterwave</div>
+            <div class="vast-feat">Detailed analytics and performance dashboards</div>
+          </div>
+          <div class="app-btns">
+            <a href="#" class="app-btn">
+              <span class="app-btn-icon">🍎</span>
+              <span class="app-btn-text">
+                <span class="app-btn-label">Download on the</span>
+                <span class="app-btn-store">App Store</span>
+              </span>
+            </a>
+            <a href="#" class="app-btn">
+              <span class="app-btn-icon">▶️</span>
+              <span class="app-btn-text">
+                <span class="app-btn-label">Get it on</span>
+                <span class="app-btn-store">Google Play</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="vast-mockup">
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-header">Vast App ⚡</div>
+              <div class="phone-stat-row">
+                <div class="phone-stat">
+                  <div class="phone-stat-n">12</div>
+                  <div class="phone-stat-l">Active Jobs</div>
+                </div>
+                <div class="phone-stat">
+                  <div class="phone-stat-n">₦85K</div>
+                  <div class="phone-stat-l">Earned</div>
+                </div>
+              </div>
+              <div class="phone-task">
+                <div class="task-dot" style="background:#22c55e"></div>
+                <span class="task-text">Office cleaning – Lekki</span>
+              </div>
+              <div class="phone-task">
+                <div class="task-dot" style="background:#f59e0b"></div>
+                <span class="task-text">Delivery – Ikeja to V.I.</span>
+              </div>
+              <div class="phone-task">
+                <div class="task-dot" style="background:#3b82f6"></div>
+                <span class="task-text">App dev project – Phase 2</span>
+              </div>
+              <div class="phone-task">
+                <div class="task-dot" style="background:#8b5cf6"></div>
+                <span class="task-text">E-commerce setup – SME</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:3rem">
+        <div class="section-label">Testimonials</div>
+        <h2>Trusted by Thousands <span class="text-gradient">Across Africa</span></h2>
+      </div>
+      <div class="grid-3">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Nkiri Synergies completely transformed how we manage our cleaning contracts. The platform is intuitive, providers are professional, and payments are seamless."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#1a56db,#0d9488)">A</div>
+            <div>
+              <div class="testimonial-name">Amara Okafor</div>
+              <div class="testimonial-role">Operations Manager, Lagos SME</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"As a freelance app developer, Nkiri has given me access to clients I never would have found otherwise. My income has tripled since joining the platform."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#16a34a,#0d9488)">C</div>
+            <div>
+              <div class="testimonial-name">Chidi Nwosu</div>
+              <div class="testimonial-role">App Developer, Abuja</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Vast App is a game changer for my logistics business. Real-time tracking, easy invoicing, and client communication all in one place. Highly recommended!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#f59e0b,#ec4899)">F</div>
+            <div>
+              <div class="testimonial-name">Fatima Bello</div>
+              <div class="testimonial-role">CEO, SwiftLogistics Nigeria</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label" style="color:#60a5fa;background:rgba(96,165,250,0.1);margin:0 auto 1rem">Join the Revolution</div>
+        <h2>Be Part of Shaping the <br>Future of Work in Africa</h2>
+        <p>Join thousands of service providers and seekers already transforming how Africa works.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg" onclick="navigate('contact')">Get Started Today</button>
+          <button class="btn btn-outline btn-lg" onclick="navigate('about')">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================
+     PAGE: ABOUT
+============================================================ -->
+<div id="page-about" class="page">
+  <div class="about-hero section">
+    <div class="container">
+      <div class="section-label" style="color:#93c5fd;background:rgba(147,197,253,0.1);margin:0 auto 1rem">About Us</div>
+      <h1>Empowering <em class="text-gradient">Innovation</em>, Enhancing Productivity</h1>
+      <p>We are a dynamic service integration platform pioneering the future of work across Africa, one connection at a time.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:white">
+    <div class="container">
+      <div class="mission-vision">
+        <div class="mv-card mv-card-mission">
+          <div style="font-size:2.5rem;margin-bottom:1rem">🎯</div>
+          <div class="section-label" style="color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.1);margin-bottom:1rem">Our Mission</div>
+          <h2>Revolutionizing Business Operations</h2>
+          <p>To revolutionize the way businesses operate by providing intuitive, user-friendly solutions that unlock human potential and foster success for entrepreneurs, small businesses, and enterprises across Africa.</p>
+        </div>
+        <div class="mv-card mv-card-vision">
+          <div style="font-size:2.5rem;margin-bottom:1rem">🔭</div>
+          <div class="section-label" style="color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.1);margin-bottom:1rem">Our Vision</div>
+          <h2>Leading Innovation in Nigeria and Beyond</h2>
+          <p>To become a leading provider of innovative business solutions in Nigeria and beyond, empowering entrepreneurs, small businesses, and enterprises to thrive in an ever-evolving market.</p>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-bottom:2.5rem">
+        <div class="section-label">Our Values</div>
+        <h2>The Principles That <span class="text-gradient">Guide Us</span></h2>
+      </div>
+      <div class="grid-3" style="margin-bottom:4rem">
+        <div class="value-card">
+          <div class="value-icon">💡</div>
+          <h3>Innovation</h3>
+          <p>We embrace creativity and forward thinking to stay ahead of the curve, constantly evolving to meet the demands of modern business.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⭐</div>
+          <h3>Excellence</h3>
+          <p>We strive for excellence in everything we do—from the quality of our platform to the service providers we onboard and support.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>Collaboration</h3>
+          <p>We believe in the power of teamwork and partnership—connecting people, businesses, and ideas to create greater outcomes together.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">❤️</div>
+          <h3>Customer-Centricity</h3>
+          <p>We prioritize the needs and satisfaction of our customers above all else, designing every feature and policy with them in mind.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔐</div>
+          <h3>Integrity</h3>
+          <p>We operate with complete transparency, honesty, and ethical standards in all our dealings with clients, providers, and partners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--gray-50)">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+        <div>
+          <div class="section-label">Our Objectives</div>
+          <h2>Where We're <span class="text-gradient">Headed</span></h2>
+          <p class="lead" style="margin:1rem 0 2rem">Clear goals guide our journey as we build the most trusted service integration platform in Africa.</p>
+          <div class="obj-item"><div class="obj-check">✓</div><span>Develop and launch the Vast App across Nigeria</span></div>
+          <div class="obj-item"><div class="obj-check">✓</div><span>Provide exceptional customer support and training</span></div>
+          <div class="obj-item"><div class="obj-check">✓</div><span>Expand product offerings to meet evolving market needs</span></div>
+          <div class="obj-item"><div class="obj-check">✓</div><span>Foster strategic partnerships with key industry players</span></div>
+          <div class="obj-item"><div class="obj-check">✓</div><span>Establish a strong presence in Nigeria and explore international markets</span></div>
+        </div>
+        <div>
+          <div class="section-label">Our Story</div>
+          <h2>Born From a <span class="text-gradient">Bold Vision</span></h2>
+          <p class="lead" style="margin:1rem 0 1.25rem">Nkiri Synergies Ltd was founded with a clear belief: that Africa's greatest resource is its people, and the right technology can unlock their potential at scale.</p>
+          <p style="font-size:14px;color:var(--gray-600);line-height:1.8;margin-bottom:1.25rem">We saw a fragmented marketplace where skilled professionals struggled to reach clients, and businesses lost time trying to find reliable service providers. Our answer was a platform that doesn't just connect—it empowers.</p>
+          <p style="font-size:14px;color:var(--gray-600);line-height:1.8">Registered as a Limited Liability Company in Nigeria, Nkiri Synergies is committed to building the infrastructure that powers Africa's future of work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Ready to Join the <span style="color:#2dd4bf">Nkiri Community?</span></h2>
+        <p>Whether you're seeking services or ready to provide them, your journey starts here.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg" onclick="navigate('contact')">Get Started</button>
+          <button class="btn btn-outline btn-lg" onclick="navigate('services')">Explore Services</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     PAGE: SERVICES
+============================================================ -->
+<div id="page-services" class="page">
+  <div class="services-hero section">
+    <div class="container">
+      <div class="section-label" style="color:#5eead4;background:rgba(94,234,212,0.1);margin:0 auto 1rem">Our Services</div>
+      <h1>Comprehensive Services for <span class="text-gradient">Every Need</span></h1>
+      <p>From cleaning to app development, we connect you with vetted professionals across every service category.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:white">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:3rem">
+        <div class="section-label">Core Services</div>
+        <h2>Everything Your Business <span class="text-gradient">Needs</span></h2>
+      </div>
+      <div class="grid-2" style="margin-bottom:3rem">
+        <div class="service-detail-card">
+          <div class="service-card-head" style="background:linear-gradient(135deg,#1a56db,#3b82f6)">
+            <span style="font-size:2rem">🎯</span>
+            <h3>Service Matching</h3>
+          </div>
+          <div class="service-card-body">
+            <p>Our intelligent algorithm analyzes your requirements and matches you with the most suitable service providers. Get personalized recommendations based on your budget, location, and specific needs.</p>
+            <div class="use-cases">
+              <h4>Use Cases</h4>
+              <span class="tag">SMEs</span><span class="tag">Corporates</span><span class="tag">Individuals</span><span class="tag">Government Agencies</span>
+            </div>
+            <button class="btn btn-primary btn-sm" style="margin-top:1.25rem" onclick="navigate('contact')">Get Started →</button>
+          </div>
+        </div>
+        <div class="service-detail-card">
+          <div class="service-card-head" style="background:linear-gradient(135deg,#0d9488,#16a34a)">
+            <span style="font-size:2rem">📊</span>
+            <h3>Project Management</h3>
+          </div>
+          <div class="service-card-body">
+            <p>End-to-end project management tools built into the Vast App. Assign tasks, set milestones, track progress in real time, and ensure every project is delivered on time and within budget.</p>
+            <div class="use-cases">
+              <h4>Use Cases</h4>
+              <span class="tag">Freelancers</span><span class="tag">Startups</span><span class="tag">SMEs</span><span class="tag">Remote Teams</span>
+            </div>
+            <button class="btn btn-green btn-sm" style="margin-top:1.25rem" onclick="navigate('contact')">Get Started →</button>
+          </div>
+        </div>
+        <div class="service-detail-card">
+          <div class="service-card-head" style="background:linear-gradient(135deg,#16a34a,#22c55e)">
+            <span style="font-size:2rem">✅</span>
+            <h3>Quality Assurance</h3>
+          </div>
+          <div class="service-card-body">
+            <p>We maintain quality standards through rigorous provider vetting, continuous performance monitoring, client feedback loops, and regular quality audits to ensure consistently excellent outcomes.</p>
+            <div class="use-cases">
+              <h4>Use Cases</h4>
+              <span class="tag">All Clients</span><span class="tag">Enterprise</span><span class="tag">Compliance-Sensitive Industries</span>
+            </div>
+            <button class="btn btn-green btn-sm" style="margin-top:1.25rem" onclick="navigate('contact')">Get Started →</button>
+          </div>
+        </div>
+        <div class="service-detail-card">
+          <div class="service-card-head" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">
+            <span style="font-size:2rem">🚚</span>
+            <h3>Logistics & Delivery</h3>
+          </div>
+          <div class="service-card-body">
+            <p>Reliable logistics partners for fast, secure delivery across Nigeria. Track shipments in real time, manage routes efficiently, and delight your customers with on-time delivery every time.</p>
+            <div class="use-cases">
+              <h4>Use Cases</h4>
+              <span class="tag">E-commerce</span><span class="tag">Retail</span><span class="tag">Food & Beverage</span><span class="tag">Documents</span>
+            </div>
+            <button class="btn btn-sm" style="background:linear-gradient(135deg,#f59e0b,#ef4444);color:white;border-radius:50px;padding:9px 18px;font-size:13px;margin-top:1.25rem" onclick="navigate('contact')">Get Started →</button>
+          </div>
+        </div>
+        <div class="service-detail-card">
+          <div class="service-card-head" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">
+            <span style="font-size:2rem">💻</span>
+            <h3>App Development</h3>
+          </div>
+          <div class="service-card-body">
+            <p>Access vetted app developers who can build custom mobile and web applications tailored to your business needs. From MVP to full-scale enterprise solutions, we have the talent.</p>
+            <div class="use-cases">
+              <h4>Use Cases</h4>
+              <span class="tag">Startups</span><span class="tag">SMEs</span><span class="tag">Corporates</span><span class="tag">Government</span>
+            </div>
+            <button class="btn btn-sm" style="background:linear-gradient(135deg,#8b5cf6,#ec4899);color:white;border-radius:50px;padding:9px 18px;font-size:13px;margin-top:1.25rem" onclick="navigate('contact')">Get Started →</button>
+          </div>
+        </div>
+        <div class="service-detail-card">
+          <div class="service-card-head" style="background:linear-gradient(135deg,#0ea5e9,#1a56db)">
+            <span style="font-size:2rem">🛒</span>
+            <h3>E-commerce Solutions</h3>
+          </div>
+          <div class="service-card-body">
+            <p>Launch, manage, and scale your online store with our comprehensive e-commerce solutions. From store setup to payment integration and inventory management, we cover it all.</p>
+            <div class="use-cases">
+              <h4>Use Cases</h4>
+              <span class="tag">Retailers</span><span class="tag">Artisans</span><span class="tag">Fashion Brands</span><span class="tag">FMCG</span>
+            </div>
+            <button class="btn btn-primary btn-sm" style="margin-top:1.25rem" onclick="navigate('contact')">Get Started →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cleaning Services Spotlight -->
+  <section class="section" style="background:var(--gray-50)">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:2.5rem">
+        <div class="section-label">Featured Service</div>
+        <h2>🧹 Cleaning Services — <span class="text-gradient">Two Flexible Packages</span></h2>
+        <p class="lead lead-center" style="margin-top:0.75rem">Choose the cleaning solution that best fits your lifestyle and business needs.</p>
+      </div>
+      <div class="grid-2">
+        <div class="cleaning-pkg">
+          <h3><span>🏢</span> On-Site Cleaning Package</h3>
+          <p style="font-size:14px;color:var(--gray-600);margin-bottom:1.25rem;line-height:1.8">Clients subscribe to our premium cleaning products while our trained, insured staff performs the cleaning services directly at your location. Perfect for regular office and home maintenance.</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem">
+            <li style="display:flex;gap:10px;align-items:center;font-size:14px"><span style="color:var(--green);font-weight:700">✓</span> Professionally trained and insured staff</li>
+            <li style="display:flex;gap:10px;align-items:center;font-size:14px"><span style="color:var(--green);font-weight:700">✓</span> Premium eco-friendly cleaning products included</li>
+            <li style="display:flex;gap:10px;align-items:center;font-size:14px"><span style="color:var(--green);font-weight:700">✓</span> Flexible scheduling around your calendar</li>
+            <li style="display:flex;gap:10px;align-items:center;font-size:14px"><span style="color:var(--green);font-weight:700">✓</span> Background-checked cleaners only</li>
+          </ul>
+          <button class="btn btn-primary" onclick="navigate('contact')">Book On-Site Cleaning</button>
+        </div>
+        <div class="cleaning-pkg">
+          <h3><span>📱</span> Online Service Package</h3>
+          <p style="font-size:14px;color:var(--gray-600);margin-bottom:1.25rem;line-height:1.8">Our platform connects clients with vetted, reliable independent cleaning service providers via the Vast App. Ideal for one-time deep cleans or regular maintenance through trusted local professionals.</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem">
+            <li style="display:flex;gap:10px;align-items:center;font-size:14px"><span style="color:var(--teal);font-weight:700">✓</span> Browse and compare vetted local providers</li>
+            <li style="display:flex;gap:10px;align-items:center;font-size:14px"><span style="color:var(--teal);font-weight:700">✓</span> Transparent pricing and reviews</li>
+            <li style="display:flex;gap:10px;align-items:center;font-size:14px"><span style="color:var(--teal);font-weight:700">✓</span> Book one-time or recurring services</li>
+            <li style="display:flex;gap:10px;align-items:center;font-size:14px"><span style="color:var(--teal);font-weight:700">✓</span> Secure payment through the app</li>
+          </ul>
+          <button class="btn btn-green" onclick="navigate('contact')">Book via App</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Can't Find What You're Looking For?</h2>
+        <p>Our team is ready to help you find the perfect service solution for your unique needs.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg" onclick="navigate('contact')">Contact Us</button>
+          <button class="btn btn-outline btn-lg" onclick="navigate('how-it-works')">How It Works</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     PAGE: HOW IT WORKS
+============================================================ -->
+<div id="page-how-it-works" class="page">
+  <div class="about-hero section">
+    <div class="container">
+      <div class="section-label" style="color:#93c5fd;background:rgba(147,197,253,0.1);margin:0 auto 1rem">How It Works</div>
+      <h1>Simple. <em class="text-gradient">Seamless.</em> Powerful.</h1>
+      <p>Getting started with Nkiri Synergies takes minutes. Follow these simple steps to connect, collaborate, and transact.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:white">
+    <div class="container" style="max-width:860px">
+      <div class="hiw-tabs">
+        <button class="tab-btn active" onclick="switchTab('seekers',this)">👤 For Service Seekers</button>
+        <button class="tab-btn" onclick="switchTab('providers',this)">🔧 For Service Providers</button>
+      </div>
+
+      <div id="tab-seekers" class="tab-panel active">
+        <div class="hiw-steps">
+          <div class="hiw-step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3>Create Your Account</h3>
+              <p>Sign up on the platform or download the Vast App. Complete your profile as a Service Seeker in just a few minutes — no technical knowledge required.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3>Post Your Service Request</h3>
+              <p>Describe what you need, when you need it, your location, and your budget. Our platform will instantly show you matching, verified providers.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3>Get Matched with Verified Providers</h3>
+              <p>Browse provider profiles, compare ratings and reviews, check availability, and select the professional that best meets your needs.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h3>Communicate, Manage & Pay Securely</h3>
+              <p>Chat directly with your chosen provider, track project progress on your dashboard, and process payments securely through Paystack or Flutterwave — all within the app.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="step-num">05</div>
+            <div class="step-content">
+              <h3>Rate, Review & Repeat</h3>
+              <p>After service completion, leave a review to help the community. Your feedback drives quality improvement and helps other users make informed decisions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-providers" class="tab-panel">
+        <div class="hiw-steps">
+          <div class="hiw-step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3>Apply & Get Verified</h3>
+              <p>Sign up as a Service Provider on the platform or Vast App. Submit your credentials, complete a background check, and provide proof of liability insurance.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3>Build Your Profile & List Services</h3>
+              <p>Create a compelling profile showcasing your skills, experience, portfolio, and pricing. The more complete your profile, the more likely clients are to choose you.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3>Receive Client Matches & Requests</h3>
+              <p>Our algorithm matches you with clients who need your specific skills and services. Accept requests, review briefs, and communicate directly with potential clients.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h3>Deliver, Collaborate & Get Paid</h3>
+              <p>Use the project management tools in Vast App to deliver exceptional work. Track milestones, communicate updates, and receive secure, timely payments directly to your account.</p>
+            </div>
+          </div>
+          <div class="hiw-step">
+            <div class="step-num">05</div>
+            <div class="step-content">
+              <h3>Grow Your Reputation & Earnings</h3>
+              <p>Collect positive reviews, build your reputation score, and unlock higher-value opportunities. Top-rated providers gain premium placement and access to exclusive corporate clients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ teaser -->
+  <section class="section" style="background:var(--gray-50)">
+    <div class="container text-center">
+      <div class="section-label" style="margin:0 auto 1rem">Have Questions?</div>
+      <h2>Still Wondering <span class="text-gradient">How It Works?</span></h2>
+      <p class="lead lead-center" style="margin:0.75rem auto 2rem">Check our comprehensive FAQ section or reach out to our support team directly.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-primary btn-lg" onclick="navigate('faq')">View FAQs</button>
+        <button class="btn btn-secondary btn-lg" onclick="navigate('contact')">Contact Support</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     PAGE: FOR PROVIDERS
+============================================================ -->
+<div id="page-providers" class="page">
+  <div class="providers-hero section">
+    <div class="container">
+      <div class="section-label" style="color:#93c5fd;background:rgba(147,197,253,0.1);margin:0 auto 1rem">For Providers</div>
+      <h1>Grow Your Business with <span class="text-gradient">Nkiri Synergies</span></h1>
+      <p>Join thousands of service providers already earning more, reaching more clients, and building their reputation on Africa's fastest-growing service platform.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:white">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:3rem">
+        <div class="section-label">Provider Benefits</div>
+        <h2>Why Providers <span class="text-gradient">Choose Nkiri</span></h2>
+      </div>
+      <div class="grid-2" style="margin-bottom:3.5rem">
+        <div class="benefit-big-card">
+          <div class="bbc-icon bbc-icon-1">🌍</div>
+          <div class="bbc-content">
+            <h3>Massive Client Exposure</h3>
+            <p>Get discovered by thousands of clients actively looking for your services. Our platform puts you in front of individuals, SMEs, startups, and enterprise corporations across Nigeria.</p>
+          </div>
+        </div>
+        <div class="benefit-big-card">
+          <div class="bbc-icon bbc-icon-2">💳</div>
+          <div class="bbc-content">
+            <h3>Secure & Fast Payments</h3>
+            <p>Never chase a payment again. Receive secure, on-time payments directly to your bank account via Paystack and Flutterwave. Transparent fee structure with no hidden costs.</p>
+          </div>
+        </div>
+        <div class="benefit-big-card">
+          <div class="bbc-icon bbc-icon-3">📊</div>
+          <div class="bbc-content">
+            <h3>Powerful Project Management Tools</h3>
+            <p>Use the Vast App to manage multiple projects simultaneously. Track deliverables, communicate with clients, and maintain complete visibility over your workload.</p>
+          </div>
+        </div>
+        <div class="benefit-big-card">
+          <div class="bbc-icon bbc-icon-4">⭐</div>
+          <div class="bbc-content">
+            <h3>Build Your Reputation</h3>
+            <p>A transparent rating and review system helps you build credibility. Top-rated providers earn premium placement in search results and access to higher-value clients.</p>
+          </div>
+        </div>
+        <div class="benefit-big-card">
+          <div class="bbc-icon bbc-icon-5">📚</div>
+          <div class="bbc-content">
+            <h3>Training & Support</h3>
+            <p>Access onboarding training, resources, and dedicated customer support to help you succeed on the platform from day one.</p>
+          </div>
+        </div>
+        <div class="benefit-big-card">
+          <div class="bbc-icon bbc-icon-6">🔓</div>
+          <div class="bbc-content">
+            <h3>Flexible Work on Your Terms</h3>
+            <p>Set your own rates, availability, and service areas. Work as much or as little as you want — Nkiri adapts to your lifestyle and business goals.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+        <div>
+          <div class="section-label">Requirements</div>
+          <h2>What You'll <span class="text-gradient">Need to Join</span></h2>
+          <p class="lead" style="margin:1rem 0 1.5rem">We maintain high standards to protect clients and uphold the Nkiri brand. Here's what's required:</p>
+          <div class="req-list">
+            <div class="req-item"><div class="req-dot"></div> Valid government-issued ID</div>
+            <div class="req-item"><div class="req-dot"></div> Proof of relevant skills, certifications, or experience</div>
+            <div class="req-item"><div class="req-dot"></div> Completion of background check</div>
+            <div class="req-item"><div class="req-dot"></div> Proof of liability insurance (where applicable)</div>
+            <div class="req-item"><div class="req-dot"></div> Bank account for payments (local Nigerian bank)</div>
+            <div class="req-item"><div class="req-dot"></div> Smartphone with internet access to use Vast App</div>
+          </div>
+        </div>
+        <div>
+          <div class="section-label">Sign-Up Process</div>
+          <h2>Ready to <span class="text-gradient">Get Started?</span></h2>
+          <p class="lead" style="margin:1rem 0 1.5rem">Joining is quick and straightforward. Most providers are approved and active within 48 hours.</p>
+          <div class="hiw-steps">
+            <div class="hiw-step" style="padding:1.25rem 0">
+              <div class="step-num" style="width:44px;height:44px;font-size:1rem">1</div>
+              <div class="step-content">
+                <h3 style="font-size:1rem">Submit Your Application</h3>
+                <p>Fill out the provider registration form online or via Vast App.</p>
+              </div>
+            </div>
+            <div class="hiw-step" style="padding:1.25rem 0">
+              <div class="step-num" style="width:44px;height:44px;font-size:1rem">2</div>
+              <div class="step-content">
+                <h3 style="font-size:1rem">Verification & Vetting</h3>
+                <p>Our team reviews your credentials and conducts a background check.</p>
+              </div>
+            </div>
+            <div class="hiw-step" style="padding:1.25rem 0">
+              <div class="step-num" style="width:44px;height:44px;font-size:1rem">3</div>
+              <div class="step-content">
+                <h3 style="font-size:1rem">Complete Onboarding</h3>
+                <p>Build your profile, complete training, and list your services.</p>
+              </div>
+            </div>
+            <div class="hiw-step" style="padding:1.25rem 0;border-bottom:none">
+              <div class="step-num" style="width:44px;height:44px;font-size:1rem">4</div>
+              <div class="step-content">
+                <h3 style="font-size:1rem">Start Earning</h3>
+                <p>Go live and start receiving client requests and growing your income.</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" style="margin-top:1.5rem" onclick="navigate('contact')">Apply as a Provider</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Your Skills Deserve a <span style="color:#2dd4bf">Bigger Stage</span></h2>
+        <p>Join the fastest-growing service marketplace in Africa today.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg" onclick="navigate('contact')">Apply Now — It's Free</button>
+          <button class="btn btn-outline btn-lg" onclick="navigate('faq')">Read FAQs First</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     PAGE: FAQ
+============================================================ -->
+<div id="page-faq" class="page">
+  <div class="faq-hero section">
+    <div class="container">
+      <div class="section-label" style="color:#93c5fd;background:rgba(147,197,253,0.1);margin:0 auto 1rem">FAQ</div>
+      <h1>Frequently Asked <span class="text-gradient">Questions</span></h1>
+      <p>Everything you need to know about Nkiri Synergies and the Vast App.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:white">
+    <div class="container" style="max-width:820px">
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            What is Nkiri Synergies?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>Nkiri Synergies is a revolutionary platform that connects service providers with clients, offering services including cleaning, logistics, delivery, e-commerce solutions, and app development. Our mission is to bridge the gap between providers and clients, making it easy to find and manage services in one place across Africa.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            What cleaning services do you offer?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>We offer two cleaning service packages: on-site and online services. On-site allows clients to subscribe to cleaning products with our staff performing services directly at your location. Online connects clients with trusted, vetted cleaning providers through our Vast App. Our role is to integrate clients and providers through a seamless mobile experience.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            Are your cleaners trained and insured?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>Yes. All providers on our platform undergo rigorous background checks, are thoroughly vetted and trained to our standards, and must provide proof of liability insurance before being approved. We take your safety and security very seriously.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            How do you handle scheduling and flexibility?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>Our platform is built with flexibility in mind. You can easily book, reschedule, or cancel services directly through the Vast App. Service providers work around your schedule, and we understand that plans change — making adjustments is simple and hassle-free.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            Do you provide a satisfaction guarantee?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>Absolutely. If you are not satisfied with the service provided, we will work with you to resolve the issue promptly. Your feedback is invaluable and is used to continuously improve our platform and provider network.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            What is your pricing structure?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>Pricing varies by service type and individual provider. We are committed to competitive, transparent billing with no hidden fees. Clients can compare prices, read reviews, and evaluate different providers before making a decision — all within the platform.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            Do you perform background checks on your staff?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>Yes, absolutely. Thorough background checks are conducted on all service providers before they are approved to join the platform. This ensures the safety, security, and peace of mind of all our clients.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            How do you handle special requests or custom plans?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>We are very happy to accommodate special requests and custom service plans. Clients can communicate their specific needs through the platform's messaging system or directly with their assigned provider. Our support team is also available to help coordinate complex requirements.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            Can you provide references or reviews?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>Yes. We maintain a transparent, public rating and review system that allows clients to see honest feedback from previous customers. Provider references are also available upon request for clients who require additional assurance before engaging a provider.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            What is your cancellation policy?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>Clients can cancel or reschedule bookings with reasonable advance notice through the platform. We understand circumstances change, and we work collaboratively with clients and providers to find solutions that work for everyone. Specific cancellation windows may vary by service type.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;padding:2.5rem;background:var(--gray-50);border-radius:var(--radius)">
+        <div style="font-size:2rem;margin-bottom:1rem">💬</div>
+        <h3 style="color:var(--navy);margin-bottom:0.5rem">Still have questions?</h3>
+        <p style="font-size:14px;color:var(--gray-600);margin-bottom:1.5rem">Our support team is ready to help you with any questions not covered above.</p>
+        <button class="btn btn-primary" onclick="navigate('contact')">Contact Our Team</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     PAGE: CONTACT
+============================================================ -->
+<div id="page-contact" class="page">
+  <div class="contact-hero section">
+    <div class="container">
+      <div class="section-label" style="color:#93c5fd;background:rgba(147,197,253,0.1);margin:0 auto 1rem">Contact Us</div>
+      <h1>Let's <span class="text-gradient">Connect</span></h1>
+      <p>Have a question, a project in mind, or ready to join the platform? We'd love to hear from you.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:white">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-info-card">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Office Address</div>
+              <div class="ci-value">Lagos, Nigeria</div>
+              <div style="font-size:13px;color:var(--gray-400);margin-top:3px">Serving all of Nigeria & beyond</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="ci-icon">✉️</div>
+            <div>
+              <div class="ci-label">Email Us</div>
+              <div class="ci-value">hello@nkirisynergies.com</div>
+              <div style="font-size:13px;color:var(--gray-400);margin-top:3px">We respond within 24 hours</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="ci-icon">📞</div>
+            <div>
+              <div class="ci-label">Call / WhatsApp</div>
+              <div class="ci-value">+234 800 000 0000</div>
+              <div style="font-size:13px;color:var(--gray-400);margin-top:3px">Mon–Fri, 8am – 6pm WAT</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="ci-icon">🌐</div>
+            <div>
+              <div class="ci-label">Follow Us</div>
+              <div class="ci-value" style="margin-bottom:10px">@nkirisynergies</div>
+              <div class="social-links">
+                <a href="#" class="social-btn" title="LinkedIn">💼</a>
+                <a href="#" class="social-btn" title="Twitter">🐦</a>
+                <a href="#" class="social-btn" title="Instagram">📸</a>
+                <a href="#" class="social-btn" title="Facebook">👍</a>
+                <a href="https://wa.me/2348000000000" class="social-btn" title="WhatsApp">💬</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form" id="contactFormWrap">
+          <h3>Send Us a Message</h3>
+          <div id="contactFormInner">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" class="form-control" id="fname" placeholder="e.g. Amara">
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" class="form-control" id="lname" placeholder="e.g. Okafor">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="+234 800 000 0000">
+            </div>
+            <div class="form-group">
+              <label>I'm interested in</label>
+              <select class="form-control" id="interest">
+                <option value="">Select an option...</option>
+                <option>Finding a Service Provider</option>
+                <option>Becoming a Provider</option>
+                <option>Vast App Information</option>
+                <option>Partnership / Investment</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea class="form-control" id="message" placeholder="Tell us how we can help you..."></textarea>
+            </div>
+            <button class="btn btn-primary btn-lg" style="width:100%" onclick="submitForm()">Send Message →</button>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">🎉</div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out! Our team will get back to you within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map placeholder -->
+  <section style="background:var(--gray-100);height:300px;display:flex;align-items:center;justify-content:center">
+    <div style="text-align:center;color:var(--gray-400)">
+      <div style="font-size:3rem;margin-bottom:0.5rem">🗺️</div>
+      <p style="font-size:14px">Interactive Map — Lagos, Nigeria</p>
+      <p style="font-size:12px">Serving clients and providers across Nigeria</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     FOOTER (shared)
+============================================================ -->
+<footer id="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-mark">N</div>
+          <div class="nav-logo-text" style="color:white">Nkiri Synergies<span style="color:rgba(255,255,255,0.4)">Ltd</span></div>
+        </div>
+        <p>Empowering Innovation, Enhancing Productivity. Africa's leading service integration platform connecting skilled professionals with businesses and individuals.</p>
+        <div class="social-links">
+          <a href="#" class="social-btn">💼</a>
+          <a href="#" class="social-btn">🐦</a>
+          <a href="#" class="social-btn">📸</a>
+          <a href="#" class="social-btn">👍</a>
+          <a href="#" class="social-btn">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#" onclick="navigate('about')">About Us</a></li>
+          <li><a href="#" onclick="navigate('services')">Our Services</a></li>
+          <li><a href="#" onclick="navigate('how-it-works')">How It Works</a></li>
+          <li><a href="#" onclick="navigate('providers')">For Providers</a></li>
+          <li><a href="#" onclick="navigate('contact')">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#" onclick="navigate('services')">Service Matching</a></li>
+          <li><a href="#" onclick="navigate('services')">Project Management</a></li>
+          <li><a href="#" onclick="navigate('services')">Logistics & Delivery</a></li>
+          <li><a href="#" onclick="navigate('services')">Cleaning Services</a></li>
+          <li><a href="#" onclick="navigate('services')">App Development</a></li>
+          <li><a href="#" onclick="navigate('services')">E-commerce</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#" onclick="navigate('faq')">FAQ</a></li>
+          <li><a href="#">Blog & Insights</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Download Vast App</a></li>
+          <li><a href="#">Partner Program</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nkiri Synergies Ltd. All rights reserved. Registered in Nigeria.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+// ---- Navigation ----
+function navigate(page) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  // Show target
+  const target = document.getElementById('page-' + page);
+  if (target) {
+    target.classList.add('active');
+  }
+  // Update nav links
+  document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === page);
+  });
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
+}
+
+// ---- Mobile Menu ----
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ---- Accordion ----
+function toggleAccordion(btn) {
+  const item = btn.closest('.accordion-item');
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+  // Toggle clicked
+  if (!isOpen) item.classList.add('open');
+}
+
+// ---- Tabs (How It Works) ----
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ---- Contact Form ----
+function submitForm() {
+  const fname = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+  if (!fname || !email || !message) {
+    alert('Please fill in your name, email, and message before sending.');
+    return;
+  }
+  document.getElementById('contactFormInner').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// ---- Navbar scroll effect ----
+window.addEventListener('scroll', () => {
+  const nb = document.getElementById('navbar');
+  if (window.scrollY > 20) {
+    nb.style.boxShadow = '0 4px 32px rgba(0,0,0,0.3)';
+  } else {
+    nb.style.boxShadow = 'none';
+  }
+});
+
+// ---- Scroll animations ----
+function initAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.card, .testimonial-card, .value-card, .benefit-big-card, .service-detail-card').forEach(el => {
+    el.classList.add('fade-in-up');
+    observer.observe(el);
+  });
+}
+document.addEventListener('DOMContentLoaded', initAnimations);
+
+// Re-init animations when navigating
+const origNavigate = navigate;
+window.navigate = function(page) {
+  origNavigate(page);
+  setTimeout(initAnimations, 100);
+};
+</script>
+</body>
+</html>
