@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Job Seeker System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f4f6fb;
+}
+
+/* AUTH PAGE */
+.center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.auth-box{
+  width:380px;
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border:1px solid #ddd;
+  border-radius:8px;
+  outline:none;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#1e40af;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+button:hover{
+  background:#1d4ed8;
+}
+
+.toggle{
+  text-align:center;
+  margin-top:12px;
+  cursor:pointer;
+  color:#1e40af;
+  font-size:14px;
+}
+
+/* DASHBOARD */
+.sidebar{
+  width:240px;
+  height:100vh;
+  background:#0f172a;
+  color:white;
+  position:fixed;
+  padding:20px;
+}
+
+.sidebar h2{
+  color:white;
+}
+
+.sidebar button{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  text-align:left;
+}
+
+.sidebar button:hover{
+  background:#1e40af;
+}
+
+.main{
+  margin-left:260px;
+  padding:30px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+  margin-bottom:20px;
+}
+
+.profile{
+  display:flex;
+  gap:15px;
+  align-items:center;
+}
+
+.profile img{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+}
+
+.wallet{
+  font-size:22px;
+  font-weight:bold;
+  color:#1e40af;
+}
+
+.hidden{
+  display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- AUTH -->
+<div id="authPage" class="center">
+
+  <div class="auth-box">
+    <h2 id="title">Job Seeker Login</h2>
+
+    <input type="text" id="username" placeholder="Username (for register)">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="handleAuth()">Continue</button>
+
+    <div class="toggle" onclick="toggleMode()">
+      Switch Login / Register
+    </div>
+  </div>
+
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+
+    <button onclick="show('profile')">Profile</button>
+    <button onclick="show('wallet')">Wallet</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="main">
+
+    <!-- PROFILE -->
+    <div id="profile" class="card">
+      <h3>Profile</h3>
+
+      <div class="profile">
+        <img id="img">
+        <div>
+          <h2 id="uname"></h2>
+          <p id="uemail"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WALLET -->
+    <div id="wallet" class="card hidden">
+      <h3>Wallet</h3>
+      <p class="wallet">₦ <span id="balance">0</span></p>
+
+      <input type="number" id="amount" placeholder="Enter amount">
+
+      <button onclick="deposit()">Deposit</button>
+      <button onclick="withdraw()">Withdraw</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+/* MODE */
+let isLogin = true;
+
+function toggleMode(){
+  isLogin = !isLogin;
+
+  document.getElementById("title").innerText =
+  isLogin ? "Job Seeker Login" : "Job Seeker Register";
+}
+
+/* FAKE DATABASE */
+function getUsers(){
+  return JSON.parse(localStorage.getItem("users")) || [];
+}
+
+function saveUsers(users){
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
+/* AUTH SYSTEM */
+function handleAuth(){
+
+  let username = document.getElementById("username").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  let users = getUsers();
+
+  if(!isLogin){
+
+    // REGISTER
+    users.push({
+      username,
+      email,
+      password,
+      image:"https://i.pravatar.cc/150"
+    });
+
+    saveUsers(users);
+    alert("Account created successfully!");
+    toggleMode();
+
+  } else {
+
+    // LOGIN
+    let user = users.find(u => u.email === email && u.password === password);
+
+    if(!user){
+      alert("Invalid login details");
+      return;
+    }
+
+    localStorage.setItem("loggedUser", JSON.stringify(user));
+    loadDashboard();
+  }
+}
+
+/* LOAD DASHBOARD */
+function loadDashboard(){
+
+  let user = JSON.parse(localStorage.getItem("loggedUser"));
+
+  if(!user) return;
+
+  document.getElementById("authPage").style.display = "none";
+  document.getElementById("dashboard").classList.remove("hidden");
+
+  document.getElementById("uname").innerText = user.username;
+  document.getElementById("uemail").innerText = user.email;
+  document.getElementById("img").src = user.image;
+
+  let wallet = JSON.parse(localStorage.getItem(user.email+"_wallet")) || 0;
+  document.getElementById("balance").innerText = wallet;
+}
+
+/* NAVIGATION */
+function show(section){
+
+  document.getElementById("profile").classList.add("hidden");
+  document.getElementById("wallet").classList.add("hidden");
+
+  document.getElementById(section).classList.remove("hidden");
+}
+
+/* WALLET */
+function getWallet(){
+  let user = JSON.parse(localStorage.getItem("loggedUser"));
+  return JSON.parse(localStorage.getItem(user.email+"_wallet")) || 0;
+}
+
+function saveWallet(amount){
+  let user = JSON.parse(localStorage.getItem("loggedUser"));
+
+  localStorage.setItem(user.email+"_wallet", JSON.stringify(amount));
+
+  document.getElementById("balance").innerText = amount;
+}
+
+function deposit(){
+  let amt = Number(document.getElementById("amount").value);
+  let wallet = getWallet() + amt;
+  saveWallet(wallet);
+}
+
+function withdraw(){
+  let amt = Number(document.getElementById("amount").value);
+  let wallet = getWallet();
+
+  if(amt > wallet){
+    alert("Insufficient balance");
+    return;
+  }
+
+  wallet -= amt;
+  saveWallet(wallet);
+}
+
+/* LOGOUT */
+function logout(){
+  localStorage.removeItem("loggedUser");
+  location.reload();
+}
+
+/* AUTO LOGIN */
+if(localStorage.getItem("loggedUser")){
+  loadDashboard();
+}
+
+</script>
+
+</body>
+</html>

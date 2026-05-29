@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Premium Payment Gateway</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background: radial-gradient(circle at top, #1e40af20, transparent),
+              radial-gradient(circle at bottom, #0f172a10, transparent),
+              #f4f6fb;
+}
+
+/* CONTAINER */
+.container{
+  max-width:900px;
+  margin:40px auto;
+  padding:20px;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.header h1{
+  color:#0f172a;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* INPUTS */
+input, select{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border:1px solid #ddd;
+  border-radius:10px;
+  outline:none;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:12px;
+  background:#1e40af;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+button:hover{
+  background:#1d4ed8;
+}
+
+/* WALLET */
+.wallet{
+  font-size:26px;
+  font-weight:bold;
+  color:#1e40af;
+}
+
+/* TRANSACTIONS */
+.tx{
+  font-size:14px;
+  padding:10px;
+  border-bottom:1px solid #eee;
+}
+
+/* CARD STYLE */
+.payment-card{
+  background: linear-gradient(135deg,#1e40af,#0f172a);
+  color:white;
+  padding:20px;
+  border-radius:16px;
+  margin-bottom:15px;
+}
+
+.small{
+  font-size:12px;
+  opacity:0.8;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>💳 Premium Payment Gateway</h1>
+    <p>Deposit, Withdraw & Track Transactions Securely</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- PAYMENT FORM -->
+    <div class="card">
+
+      <h3>Make Payment</h3>
+
+      <select id="method">
+        <option value="card">Card Payment</option>
+        <option value="wallet">Wallet Deposit</option>
+      </select>
+
+      <input type="text" id="name" placeholder="Full Name">
+      <input type="number" id="amount" placeholder="Amount">
+
+      <div id="cardFields">
+        <input type="text" placeholder="Card Number">
+        <input type="text" placeholder="Expiry Date">
+        <input type="text" placeholder="CVV">
+      </div>
+
+      <button onclick="pay()">Pay Now</button>
+
+    </div>
+
+    <!-- WALLET -->
+    <div class="card">
+
+      <h3>Your Wallet</h3>
+      <p class="wallet">₦ <span id="balance">0</span></p>
+
+      <button onclick="refreshWallet()">Refresh Wallet</button>
+
+      <h4>Transaction History</h4>
+      <div id="history"></div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+
+/* DB */
+let wallet = JSON.parse(localStorage.getItem("wallet")) || 0;
+let history = JSON.parse(localStorage.getItem("history")) || [];
+
+function updateUI(){
+  document.getElementById("balance").innerText = wallet;
+
+  let html = "";
+  history.slice().reverse().forEach(tx=>{
+    html += `<div class="tx">${tx}</div>`;
+  });
+
+  document.getElementById("history").innerHTML = html;
+}
+
+updateUI();
+
+/* PAYMENT */
+function pay(){
+
+  let amount = Number(document.getElementById("amount").value);
+  let method = document.getElementById("method").value;
+  let name = document.getElementById("name").value;
+
+  if(!amount || !name){
+    alert("Fill all fields");
+    return;
+  }
+
+  if(method === "card"){
+    wallet += amount;
+    history.push(`💳 Card payment of ₦${amount} by ${name}`);
+  }
+
+  if(method === "wallet"){
+    if(amount > wallet){
+      alert("Insufficient wallet balance");
+      return;
+    }
+    wallet -= amount;
+    history.push(`💰 Wallet withdrawal of ₦${amount}`);
+  }
+
+  localStorage.setItem("wallet", JSON.stringify(wallet));
+  localStorage.setItem("history", JSON.stringify(history));
+
+  updateUI();
+
+  alert("Transaction successful!");
+}
+
+function refreshWallet(){
+  updateUI();
+}
+
+</script>
+
+</body>
+</html>

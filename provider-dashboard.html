@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Provider Dashboard - Nkiri Synergies Ltd</title>
+  <link rel="stylesheet" href="main.css" />
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #10b981;
+      --navy: #0f172a;
+      --white: #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-500: #64748b;
+      --gray-700: #334155;
+      --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: linear-gradient(to bottom right, #f8fafc, #eef4ff);
+      color: var(--gray-700);
+    }
+
+    .dashboard-layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 280px;
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1.5rem;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .brand-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), #60a5fa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .brand h2 {
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .sidebar-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      padding: 1rem 1rem;
+      border-radius: 14px;
+      transition: var(--transition);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sidebar-links a:hover,
+    .sidebar-links a.active {
+      background: rgba(255,255,255,0.08);
+      color: white;
+    }
+
+    /* MAIN */
+    .main-content {
+      margin-left: 280px;
+      width: calc(100% - 280px);
+      padding: 2rem;
+    }
+
+    .topbar {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.7);
+      padding: 1.3rem 2rem;
+      border-radius: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .topbar h1 {
+      font-size: 1.7rem;
+      color: var(--navy);
+    }
+
+    .provider-profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .provider-profile img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #dbeafe;
+    }
+
+    .provider-profile h4 {
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+
+    .provider-profile span {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    /* CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255,255,255,0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(37, 99, 235, 0.06);
+      border-radius: 50%;
+      top: -40px;
+      right: -20px;
+    }
+
+    .stat-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 16px;
+      background: #eff6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-card p {
+      color: var(--gray-500);
+      font-size: 0.95rem;
+    }
+
+    /* WALLET */
+    .wallet-section {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: 28px;
+      padding: 2rem;
+      color: white;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wallet-section::before {
+      content: '';
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      right: -80px;
+      top: -80px;
+    }
+
+    .wallet-balance {
+      margin: 1.5rem 0;
+    }
+
+    .wallet-balance h2 {
+      font-size: 3rem;
+      margin-top: 0.5rem;
+    }
+
+    .wallet-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .wallet-btn {
+      padding: 0.95rem 1.8rem;
+      border-radius: 14px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .deposit-btn {
+      background: white;
+      color: var(--navy);
+    }
+
+    .withdraw-btn {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .wallet-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* CONTENT GRID */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-header h3 {
+      color: var(--navy);
+      font-size: 1.2rem;
+    }
+
+    /* WORKS */
+    .work-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .work-item:last-child {
+      border-bottom: none;
+    }
+
+    .work-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .work-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #dbeafe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .work-info h4 {
+      margin-bottom: 0.25rem;
+      color: var(--navy);
+    }
+
+    .work-info span {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .price {
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    /* PROFILE */
+    .profile-card {
+      text-align: center;
+    }
+
+    .profile-card img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #dbeafe;
+      margin-bottom: 1rem;
+    }
+
+    .profile-card h2 {
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .profile-card p {
+      color: var(--gray-500);
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-details {
+      text-align: left;
+      margin-top: 1rem;
+    }
+
+    .profile-details div {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 0.95rem;
+    }
+
+    .profile-details strong {
+      color: var(--navy);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .topbar {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .wallet-balance h2 {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">N</div>
+        <h2>Nkiri Synergies Ltd</h2>
+      </div>
+
+      <div class="sidebar-links">
+        <a href="#" class="active">🏠 Dashboard</a>
+        <a href="#">👤 My Profile</a>
+        <a href="#">💼 My Services</a>
+        <a href="#">📁 Completed Jobs</a>
+        <a href="#">💳 Wallet</a>
+        <a href="#">⭐ Reviews</a>
+        <a href="#">⚙ Settings</a>
+        <a href="index.html">🚪 Logout</a>
+      </div>
+    </aside>
+
+    <div class="sidebar-links">
+
+  <a href="#" class="active" onclick="showSection('dashboard')">🏠 Dashboard</a>
+
+  <a href="#" onclick="showSection('profile')">👤 My Profile</a>
+
+  <a href="#" onclick="showSection('services')">💼 My Services</a>
+
+  <a href="#" onclick="showSection('works')">📁 Completed Jobs</a>
+
+  <a href="#" onclick="showSection('wallet')">💳 Wallet</a>
+
+  <a href="#" onclick="showSection('reviews')">⭐ Reviews</a>
+
+  <a href="#" onclick="showSection('settings')">⚙ Settings</a>
+
+  <a href="#" onclick="logoutProvider()">🚪 Logout</a>
+
+</div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <div>
+          <h1>Provider Dashboard</h1>
+          <p style="color: var(--gray-500); margin-top: 0.4rem;">
+            Welcome back, manage your services professionally.
+          </p>
+        </div>
+
+        <div class="provider-profile">
+          <img src="https://i.pravatar.cc/150?img=12" alt="Provider">
+          <div>
+            <h4>John David</h4>
+            <span>Professional Service Provider</span>
+          </div>
+        </div>
+      </div>
+    <!-- WALLET -->
+      <section class="wallet-section">
+        <span style="opacity: 0.7; letter-spacing: 1px;">AVAILABLE WALLET BALANCE</span>
+
+        <div class="wallet-balance">
+          <h2>₦245,000</h2>
+        </div>
+
+        <p style="max-width: 500px; opacity: 0.8; line-height: 1.7;">
+          Easily manage your earnings, receive payments from completed jobs, withdraw funds anytime, or deposit money securely into your provider wallet.
+        </p>
+<div class="wallet-actions">
+  <button class="wallet-btn deposit-btn" onclick="depositMoney()">
+    + Deposit Funds
+  </button>
+
+  <button class="wallet-btn withdraw-btn" onclick="withdrawMoney()">
+    Withdraw Money
+  </button>
+</div>
+      </section>
+
+
+      
+      <!-- CONTENT GRID -->
+      <div class="content-grid">
+
+        <!-- RECENT WORKS -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Recent Completed Works</h3>
+            <span style="color: var(--primary); font-weight: 600; cursor: pointer;">View All</span>
+          </div>
+
+          <div class="work-item">
+            <div class="work-info">
+              <div class="work-badge">🧹</div>
+              <div>
+                <h4>Office Cleaning Service</h4>
+                <span>Completed • Port Harcourt</span>
+              </div>
+            </div>
+            <div class="price">₦45,000</div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-info">
+              <div class="work-badge">💻</div>
+              <div>
+                <h4>Website Development</h4>
+                <span>Completed • Lagos</span>
+              </div>
+            </div>
+            <div class="price">₦180,000</div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-info">
+              <div class="work-badge">🚚</div>
+              <div>
+                <h4>Logistics Delivery</h4>
+                <span>Completed • Abuja</span>
+              </div>
+            </div>
+            <div class="price">₦25,000</div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-info">
+              <div class="work-badge">📱</div>
+              <div>
+                <h4>Mobile App UI Design</h4>
+                <span>Completed • Remote</span>
+              </div>
+            </div>
+            <div class="price">₦120,000</div>
+          </div>
+        </div>
+
+        <!-- PROFILE CARD -->
+        <div class="card profile-card">
+          <img src="https://i.pravatar.cc/150?img=12" alt="Profile">
+
+          <h2>John David</h2>
+          <p>Verified Professional Provider</p>
+
+          <button style="
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 1rem;
+          ">
+            Edit Profile
+          </button>
+
+          <div class="profile-details">
+            <div>
+              <span>Email</span>
+              <strong>john@gmail.com</strong>
+            </div>
+
+            <div>
+              <span>Phone</span>
+              <strong>+234 812 345 6789</strong>
+            </div>
+
+            <div>
+              <span>Service</span>
+              <strong>Web Developer</strong>
+            </div>
+
+            <div>
+              <span>Status</span>
+              <strong style="color: var(--secondary);">Verified</strong>
+            </div>
+
+            <div>
+              <span>Member Since</span>
+              <strong>2025</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      
+      <!-- STATS -->
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <div class="stat-icon">💼</div>
+          <h3>48</h3>
+          <p>Completed Projects</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <h3>4.9</h3>
+          <p>Average Rating</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <h3>₦1.2M</h3>
+          <p>Total Earnings</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">🧾</div>
+          <h3>16</h3>
+          <p>Pending Requests</p>
+        </div>
+
+      </div>
+
+  
+
+
+    </main>
+
+  </div>
+
+</body>
+</html>
+
+<script>
+
+  // ===============================
+  // LOCAL DATABASE SETUP
+  // ===============================
+
+  const providersDB = JSON.parse(localStorage.getItem('providersDB')) || [];
+
+  // CURRENT LOGGED IN USER
+  const currentProvider = JSON.parse(localStorage.getItem('loggedInProvider'));
+
+  // ===============================
+  // SIDEBAR NAVIGATION
+  // ===============================
+
+  const sections = {
+    dashboard: document.getElementById('dashboardSection'),
+    profile: document.getElementById('profileSection'),
+    services: document.getElementById('servicesSection'),
+    works: document.getElementById('worksSection'),
+    wallet: document.getElementById('walletSection'),
+    reviews: document.getElementById('reviewsSection'),
+    settings: document.getElementById('settingsSection')
+  };
+
+  function showSection(sectionName) {
+
+    Object.values(sections).forEach(section => {
+      if(section) section.style.display = 'none';
+    });
+
+    if(sections[sectionName]) {
+      sections[sectionName].style.display = 'block';
+    }
+
+    document.querySelectorAll('.sidebar-links a').forEach(link => {
+      link.classList.remove('active');
+    });
+
+    event.target.classList.add('active');
+  }
+
+
+  // ===============================
+  // PROVIDER REGISTRATION FUNCTION
+  // ===============================
+
+  function registerProvider(providerData) {
+
+    const existingProvider = providersDB.find(
+      provider => provider.email === providerData.email
+    );
+
+    if(existingProvider) {
+      alert('Provider already exists');
+      return;
+    }
+
+    providersDB.push(providerData);
+
+    localStorage.setItem('providersDB', JSON.stringify(providersDB));
+
+    alert('Registration Successful');
+  }
+
+
+  // ===============================
+  // PROVIDER LOGIN FUNCTION
+  // ===============================
+
+  function loginProvider(email, password) {
+
+    const provider = providersDB.find(
+      p => p.email === email && p.password === password
+    );
+
+    if(provider) {
+
+      localStorage.setItem(
+        'loggedInProvider',
+        JSON.stringify(provider)
+      );
+
+      window.location.href = 'provider-dashboard.html';
+
+    } else {
+      alert('Invalid Login Details');
+    }
+  }
+
+
+  // ===============================
+  // DISPLAY PROVIDER DATA
+  // ===============================
+
+  if(currentProvider) {
+
+    const providerName = document.querySelectorAll('.provider-name');
+
+    providerName.forEach(item => {
+      item.textContent = currentProvider.username || currentProvider.firstName;
+    });
+
+    const walletBalance = document.getElementById('walletBalance');
+
+    if(walletBalance) {
+      walletBalance.textContent = `₦${currentProvider.wallet || 0}`;
+    }
+  }
+
+
+  // ===============================
+  // WALLET DEPOSIT
+  // ===============================
+
+  function depositMoney() {
+
+    let amount = prompt('Enter amount to deposit');
+
+    amount = Number(amount);
+
+    if(amount > 0) {
+
+      currentProvider.wallet = (currentProvider.wallet || 0) + amount;
+
+      updateProviderData();
+
+      alert('Deposit Successful');
+
+      location.reload();
+    }
+  }
+
+
+  // ===============================
+  // WALLET WITHDRAWAL
+  // ===============================
+
+  function withdrawMoney() {
+
+    let amount = prompt('Enter amount to withdraw');
+
+    amount = Number(amount);
+
+    if(amount > currentProvider.wallet) {
+      alert('Insufficient Balance');
+      return;
+    }
+
+    if(amount > 0) {
+
+      currentProvider.wallet -= amount;
+
+      updateProviderData();
+
+      alert('Withdrawal Successful');
+
+      location.reload();
+    }
+  }
+
+
+  // ===============================
+  // UPDATE DATABASE
+  // ===============================
+
+  function updateProviderData() {
+
+    const updatedProviders = providersDB.map(provider => {
+
+      if(provider.email === currentProvider.email) {
+        return currentProvider;
+      }
+
+      return provider;
+    });
+
+    localStorage.setItem(
+      'providersDB',
+      JSON.stringify(updatedProviders)
+    );
+
+    localStorage.setItem(
+      'loggedInProvider',
+      JSON.stringify(currentProvider)
+    );
+  }
+
+
+  // ===============================
+  // LOGOUT FUNCTION
+  // ===============================
+
+  function logoutProvider() {
+
+    localStorage.removeItem('loggedInProvider');
+
+    window.location.href = 'login-provider.html';
+  }
+
+</script>
+
+<div class="sidebar-links">
+
+  <a href="#" class="active" onclick="showSection('dashboard')">🏠 Dashboard</a>
+
+  <a href="#" onclick="showSection('profile')">👤 My Profile</a>
+
+  <a href="#" onclick="showSection('services')">💼 My Services</a>
+
+  <a href="#" onclick="showSection('works')">📁 Completed Jobs</a>
+
+  <a href="#" onclick="showSection('wallet')">💳 Wallet</a>
+
+  <a href="#" onclick="showSection('reviews')">⭐ Reviews</a>
+
+  <a href="#" onclick="showSection('settings')">⚙ Settings</a>
+
+  <a href="#" onclick="logoutProvider()">🚪 Logout</a>
+
+</div>
+```
+
+# Wallet Balance Update
+
+Replace the wallet amount heading with:
+
+```html
+<h2 id="walletBalance">₦245,000</h2>
+```
+
+# Wallet Buttons Update
+
+Replace wallet buttons with:
+
+```html
+<div class="wallet-actions">
+  <button class="wallet-btn deposit-btn" onclick="depositMoney()">
+    + Deposit Funds
+  </button>
+
+  <button class="wallet-btn withdraw-btn" onclick="withdrawMoney()">
+    Withdraw Money
+  </button>
+</div>
+```
+
+# Dynamic Username Update
+
+Replace all static provider names like:
+
+```html
+John David
+```
+
+with:
+
+```html
+<span class="provider-name">Provider Name</span>
